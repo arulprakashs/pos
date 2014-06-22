@@ -15,18 +15,32 @@
 						http://www.springframework.org/schema/aop/spring-aop-3.0.xsd ">
 
 	
-	<context:component-scan base-package="com.tbs"/> 
+	
 	 
 	<context:annotation-config />
+	<context:component-scan base-package="com.tbs"/> 
+    
+    <mvc:annotation-driven />    
+    
+	 <!-- Location 1 -->	
+    <!-- Enable annotation-based controllers using @Controller annotations -->
+    <bean id="annotationUrlMapping" class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping">
+        <property name="order" value="0" />
+    </bean>
+
+	<!-- Location 2 -->
+    <bean id="controllerClassNameHandlerMapping" class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"/>
 	
+	<!-- Location 3 -->
+    <bean id="annotationMethodHandlerAdapter" class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"/>
+     
+	<!-- Location 4 -->
 	<mvc:resources mapping="/**"
                location="/res/"
                cache-period="10000" />
+			   
     <mvc:default-servlet-handler />
-     
-    <mvc:annotation-driven />    
-    
-          
+	
 	<bean id="homeService" 
         class="com.tbs.service.HomeService"/>
         
