@@ -6,7 +6,7 @@
 
 <tiles-definitions>
 
-	<definition name=".home" template="/views/home.jsp"/>
-	<definition name=".upload" template="/views/upload.jsp"/>
+	<definition name=".home" template="/WEB-INF/views/home.jsp"/>
+	<definition name=".upload" template="/WEB-INF/views/upload.jsp"/>
 	
 </tiles-definitions>
