@@ -39,7 +39,7 @@
                location="/res/"
                cache-period="10000" />
 			   
-    <mvc:default-servlet-handler />
+    <mvc:default-servlet-handler default-servlet-name="myCustomDefaultServlet"/>/>
 	
 	<bean id="homeService" 
         class="com.tbs.service.HomeService"/>
