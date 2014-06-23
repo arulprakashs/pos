@@ -24,7 +24,7 @@
                location="/res/"
                cache-period="10000" />
                
-    <mvc:default-servlet-handler default-servlet-name="myCustomDefaultServlet"/>
+    <mvc:default-servlet-handler/>
      
       
     
