@@ -20,7 +20,8 @@ import org.apache.commons.fileupload.DiskFileUpload;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUpload;
 import org.apache.commons.fileupload.FileUploadException;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.tbs.service.HomeService;
 
@@ -30,22 +31,21 @@ import com.tbs.service.HomeService;
 @Controller
 public class HomeController {
 
-	public static Logger logger = Logger.getLogger(HomeController.class);
+	public static Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
 	@Autowired
 	public HomeService homeService; 
 	
 	@RequestMapping(value="/login")
 	public ModelAndView login(HttpServletResponse response) throws IOException{
-		Logger logger = Logger.getLogger(HomeController.class);
-		logger.debug("Entering login");
+		
 		homeService.getCredentials();
 		return new ModelAndView(".home");
 	}
 	
 	@RequestMapping(value="/upload")
 	public ModelAndView upload(HttpServletResponse response) throws IOException{		
-		logger.debug("Entering upload");
+		
 		return new ModelAndView(".upload");
 	}
 	
@@ -110,8 +110,7 @@ public class HomeController {
 
 	@RequestMapping(value="/getData")
 	public ModelAndView getData(HttpServletResponse response) throws IOException{
-		Logger logger = Logger.getLogger(HomeController.class);
-		logger.debug("Entering getData");
+	
 		/*ObjectMapper mapper = new ObjectMapper();
 		
 		Map map = new HashMap<String,String>();
