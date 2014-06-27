@@ -40,7 +40,7 @@ public class HomeController {
 	public ModelAndView login(HttpServletResponse response) throws IOException{
 		
 		homeService.getCredentials();
-		return new ModelAndView("home");
+		return new ModelAndView(".home");
 	}
 	
 	@RequestMapping(value="/upload")

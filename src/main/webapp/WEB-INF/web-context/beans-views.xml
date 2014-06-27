@@ -17,12 +17,17 @@
 	
 	
 	<context:annotation-config />
-	<context:component-scan base-package="com.tbs"/>
+	<!-- <context:component-scan base-package="com.tbs"/> -->
+	
+	<context:component-scan base-package="com.tbs">
+    	<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+	</context:component-scan>
+	
 	<mvc:annotation-driven /> 
 	
 	<mvc:resources mapping="/**"
-               location="/res/, classpath:/res/" 
-               cache-period="0" />
+               location="/res/" 
+               cache-period="10000" />
                
     <mvc:default-servlet-handler default-servlet-name="default"/>
      
@@ -32,23 +37,23 @@
 	<bean id="homeService" 
         class="com.tbs.service.HomeService"/>
         
-	<bean id="viewResolver" 
+	<!-- <bean id="viewResolver" 
         class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="viewClass">
             <value>org.springframework.web.servlet.view.JstlView</value>
         </property>
         <property name="prefix"><value>/WEB-INF/views/</value></property>
         <property name="suffix"><value>.jsp</value></property>
-    </bean>
+    </bean> -->
     
 
-	<!-- <bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
 	    <property name="viewClass">
 	        <value>
 	            org.springframework.web.servlet.view.tiles2.TilesView
 	        </value>
 	    </property>
-	</bean> -->
+	</bean>
 	
 	<bean id="tilesConfigurer"
 	    class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
