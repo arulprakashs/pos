@@ -170,11 +170,50 @@
 	
 	<profiles>
 	    <profile>
-	        <id>target</id>
+	        <id>dev</id>
+	        
+	       <!--  <activation>
+		        <property>
+		          <name>env</name>
+		          <value>dev</value>
+		        </property>
+		    </activation> -->
+      		
+      		<properties>
+		        <target.directory>e:/workouts/dist</target.directory>
+		        <log4j.logs>e:/logs/pos.log</log4j.logs>
+		    </properties>
+      
 	        <build>
-	            <directory>e:/workouts/dist</directory>
+	            <directory>${target.directory}</directory>
+				<resources>
+			      <resource>
+			        <directory>src/main/resources</directory>			       
+			        <filtering>true</filtering>
+			      </resource>
+			    </resources>
 	        </build>
 	    </profile>
+	
+	    <profile>
+	        <id>prod</id>
+	       	    
+      		<properties>
+		        <log4j.logs>/var/lib/openshift/53a1315a4382ec306f000072/app-root/logs/pos.log</log4j.logs>
+		    </properties>
+      
+	        <build>
+	            <directory>${project.build.directory}</directory>
+				<resources>
+			      <resource>
+			        <directory>src/main/resources</directory>			       
+			        <filtering>true</filtering>
+			      </resource>
+			    </resources>
+	        </build>
+	    </profile>
+	    
+	    
 	</profiles>
 
 	<build>
@@ -190,6 +229,26 @@
 				</configuration>
 			</plugin>
 			
+			
+            <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.6</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <target>
+                             <!--    <property environment="dev" /> -->
+                                <echoproperties />
+                            </target>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+       
 			<!--<plugin>
 		        <groupId>org.apache.maven.plugins</groupId>
 		        <artifactId>maven-jar-plugin</artifactId>
