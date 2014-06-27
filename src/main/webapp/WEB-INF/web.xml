@@ -52,7 +52,7 @@
      </jsp-config>
      
 	 <welcome-file-list>
-		<welcome-file>/res/index.jsp</welcome-file>
+		<welcome-file>res/index.jsp</welcome-file>
 	</welcome-file-list>
 
     <!--  <security-constraint>
