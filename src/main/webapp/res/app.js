@@ -6,7 +6,7 @@
 
 Ext.application({
     name: 'pos',
-
+    appFolder : '/app',
     //extend: 'pos.Application',
     
     extend: 'Ext.app.Application',

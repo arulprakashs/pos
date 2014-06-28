@@ -29,6 +29,7 @@ import com.tbs.service.HomeService;
 
 
 @Controller
+@RequestMapping("/home")
 public class HomeController {
 
 	public static Logger logger = LoggerFactory.getLogger(HomeController.class);
@@ -46,7 +47,7 @@ public class HomeController {
 	@RequestMapping(value="/upload")
 	public ModelAndView upload(HttpServletResponse response) throws IOException{		
 		
-		return new ModelAndView("upload");
+		return new ModelAndView(".upload");
 	}
 	
 	@RequestMapping(value="/importFile", method = RequestMethod.POST)

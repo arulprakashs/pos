@@ -5,12 +5,12 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Home</title>
-        <link rel="stylesheet" type="text/css" href="resources/css/ext-all.css"/>
+        <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/ext-all.css"/>
        <%--  <link rel="stylesheet" type="text/css" href="css/AIM.css" />
 		<link rel="stylesheet" type="text/css" href="css/AimXtypes.css" /> --%>
 	         
-        <script src="ext/ext-dev.js"></script>
-		<script src="js/upload.js"></script>
+        <script src="${pageContext.request.contextPath}/ext/ext-dev.js"></script>
+		<script src="${pageContext.request.contextPath}/js/upload.js"></script>
 		
 		
 		<style type="text/css">
