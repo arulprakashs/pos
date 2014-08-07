@@ -27,7 +27,7 @@
 	
 	<mvc:resources mapping="/**"
                location="/res/" 
-               cache-period="10000" />
+               cache-period="31556926" />
                
     <mvc:default-servlet-handler default-servlet-name="default"/>
      

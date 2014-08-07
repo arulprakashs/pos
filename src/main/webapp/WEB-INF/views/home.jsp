@@ -7,7 +7,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Home</title>
         <link rel="stylesheet" type="text/css" href='${pageContext.request.contextPath}/resources/ext-theme-classic/ext-theme-classic-all.css'>         
-        <script src='${pageContext.request.contextPath}/ext/ext-dev.js'></script>
+        <script src='${pageContext.request.contextPath}/ext/ext-all.js'></script>
 		<script src='${pageContext.request.contextPath}/app.js'></script>
     </head>
     <body>

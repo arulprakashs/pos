@@ -9,7 +9,7 @@
        <%--  <link rel="stylesheet" type="text/css" href="css/AIM.css" />
 		<link rel="stylesheet" type="text/css" href="css/AimXtypes.css" /> --%>
 	         
-        <script src="${pageContext.request.contextPath}/ext/ext-dev.js"></script>
+        <script src="${pageContext.request.contextPath}/ext/ext-all.js"></script>
 		<script src="${pageContext.request.contextPath}/js/upload.js"></script>
 		
 		
